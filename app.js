@@ -1,15 +1,14 @@
+const express = require("express");
 
-const http = require('http');
+// Initialize Express
+const app = express();
 
-const hostname = 'https://solgymbackend.vercel.app/';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+// Create GET request
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+// Initialize server
+app.listen(5000, () => {
+  console.log("Running on port 5000.");
 });
